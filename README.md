@@ -1,0 +1,2 @@
+# fuck_verifycode
+用tensorflow搭建CNN识别验证码
