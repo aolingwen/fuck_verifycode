@@ -207,6 +207,11 @@ class verify_code_network(object):
         return accuracy
 
     def train(self):
+        if not os.path.exists(utility.LOG_DIR):
+            os.mkdir(utility.LOG_DIR)
+        if not os.path.exists(utility.MODEL_DIR):
+            os.mkdir(utility.MODEL_DIR)
+
         step = 0
         images, labels = utility.inputs(train=True, batch_size=utility.BATCH_SIZE, epoch=90)
         logits = self.__inference(images, 0.5)
